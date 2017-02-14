@@ -2,13 +2,17 @@ var React = require('react');
 
 var MusicList = React.createClass({
   render: function(){ 
-
-    var options =
-    return (<div>
-      <h1>I am a List</h1>
-      </div>)
-    
+    console.log(this.props.entrylist)
+    var list = this.props.entryList.map(function(label, index){
+      return <li value={index} key={index}>{label.im.artist.label}</li>
+    })
+    return (
+      <ul id="artist-names">
+      {list}
+      </ul>
+      );
   }
+
 });
 
 module.exports = MusicList;
